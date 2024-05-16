@@ -7,7 +7,7 @@ const uid = function () {
   return Date.now().toString(36) + Math.random().toString(36).substr(2)
 }
 
-const exampleURL = location.protocol + '//' + location.host + '/welcome/'
+const exampleURL = location.href + '/welcome/'
 
 function App() {
   // MARK: STATES
