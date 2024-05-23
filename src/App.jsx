@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import InputGroup from './components/InputGroup.jsx'
+import Frame from './components/Frame.jsx'
 
 
 const uid = function () {
@@ -48,9 +49,11 @@ function App() {
     let className = frames.length & 1 == 1 ? '' : 'even'
 
     const items = frames.map(frame =>
-      <div key={frame.id} className={className}>
+      /* <div key={frame.id} className={className}>
         <iframe src={frame.src} title={frame.name}></iframe>
-      </div>
+      </div> */
+
+      <Frame key={frame.id} frame={frame} className={className}></Frame>
     )
 
     setFrameItems(items)
