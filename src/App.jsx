@@ -26,6 +26,12 @@ function App() {
   // MARK: CRUD STATES
   const updateFrame = (frame) => {
     console.log({ updateFrame: frame })
+    if ( frame.src.includes('?=') ) { 
+      frame.src = frame.src + '&t=' + Date.now()
+    } else {
+      frame.src = frame.src + '?t=' + Date.now()
+    }
+
     const idx = frames.findIndex(fr => fr.id === frame.id)
     frames[idx] = frame
     setFrames(frames)
